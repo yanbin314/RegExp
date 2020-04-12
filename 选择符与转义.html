@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let tel = '010-9999999';
+    console.log(/010\-\d{7,8}|020\-\d{7,8}/.test(tel));
+
+    let price = 12.36;
+    console.log(/\d+\.\d/.test(price));
+    let reg = new RegExp('\\d+\\.\\d');
+    console.log(reg.test(price));
+        
+  </script>
+</body>
+</html>

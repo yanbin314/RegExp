@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>qwedsf564dsf</div>
+  <script>
+    let str = 'qwesffgvewf54601561';
+    let end = /[0-9]/.test(str);
+    console.log(end);
+    let a = 'e';
+    str = 'sdfdseefsdf';
+    end = eval(`/${a}/`).test(str);
+    console.log(end);
+
+    // 对象格式
+    let div = document.querySelector('div');
+    let con = prompt('输入要检测的内容');
+    let reg = new RegExp(con, 'g');
+    div.innerHTML = div.innerHTML.replace( reg, (search) => {
+      return `<span style="color: red;">${search}</span>`;
+    });
+  </script>
+</body>
+</html>
