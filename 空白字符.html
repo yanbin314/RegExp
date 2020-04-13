@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 排除字符组
+    // [^]
+    let str = "        是:010-56231561,      发:020-85236974";
+    console.log(str.match(/[^\d-:,]\S/g));
+    
+    //字母开头 6-9位
+    // let username = prompt('input your username:');
+    // console.log(/^[a-z]\w{5,8}$/.test(username))
+
+    // 匹配所有字符
+    let str1 = `
+      <span>
+        sadfdsf
+        dsfgsdggsd
+        </span>
+    `;
+    // console.log(str1.match(/<span>[\s\S]+<\/span>/));
+
+    // m多行匹配修正符实例
+    let str2 = `
+      #1 js,200元 #
+      #2 PHP,300元 #
+      #9 hopdjf # 打
+      #3 node.js,180元 #
+    `;
+    let arr = str2.match(/^\s*#\d\s+.+\s+#$/m);
+    let lessons = str2.match(/^\s*#\d+\s+.+\s+#$/gm).map( item => {
+      item = item.replace(/\s*#\d+\s*/, '').replace(/\s+#/, '');
+      [name, price] = item.split(',');
+      return {name, price};
+    });
+          console.log(lessons);
+  </script>
+</body>
+</html>
