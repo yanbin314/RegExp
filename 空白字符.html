@@ -32,13 +32,14 @@
       #9 hopdjf # 打
       #3 node.js,180元 #
     `;
-    let arr = str2.match(/^\s*#\d\s+.+\s+#$/m);
-    let lessons = str2.match(/^\s*#\d+\s+.+\s+#$/gm).map( item => {
-      item = item.replace(/\s*#\d+\s*/, '').replace(/\s+#/, '');
+    
+    let arr = str2.match(/^\s+#\d\s+.+\s+#$/gm);
+    let lessons = arr.map( (item) => {
+      item = item.replace(/^\s+#\d\s+/, '').replace(/\s+#$/, '');
       [name, price] = item.split(',');
       return {name, price};
     });
-          console.log(lessons);
+    console.log(lessons);
   </script>
 </body>
 </html>

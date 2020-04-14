@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let s1 = 'sdafsdf2021';
+    console.log(s1.match(/\p{N}/gu));
+    console.log(s1.match(/\p{L}/gu));
+    let s2 = '第三方51,,15第三方wdf';
+    console.log(s2.match(/\p{sc=Han}/gu));
+    console.log(s2.match(/\p{P}/gu));
+    // 宽字节内容也要加 /u
+
+    let s3 = 'dsfaw56';
+    let reg = /\w/g;
+    while (res = reg.exec(s3)) {
+      console.log(res);
+    }
+  </script>
+</body>
+</html>
