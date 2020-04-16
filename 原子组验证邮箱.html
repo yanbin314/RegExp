@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="email">
+  <span></span>
+  <script>
+    let s1 = document.querySelector('input');
+    s1.addEventListener('keyup', function () {
+      let reg = /^[\w-]+@([\w-]+\.)+(com|cn|cc|org)$/g;
+      document.querySelector('span').innerHTML = s1.value.match(reg) ? '正确' : '错误';
+    });
+  </script>
+</body>
+</html>

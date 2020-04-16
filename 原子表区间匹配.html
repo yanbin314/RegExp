@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>
+    sdafsdaf
+    fghh
+  </h1>
+  <h2>dsfasdwqqw</h2>
+
+  <script>
+    let str = 'qweasddsf';
+    console.log(str.match(/[qwewgfdqd]/g));
+    
+    let str1 = '2020/02/22';
+    console.log(str1.match(/^\d{4}[-\/]\d{2}[-\/]\d{2}/));
+    
+    let s1 = '2015';
+    console.log(s1.match(/[0-9]+/g));
+    
+    let s2 = '账上:15-54651,地方:651-56423';
+    console.log(s2.match(/[^:\d,-]+/g));
+    console.log(s2.match(/\p{sc=Han}+/gu));
+
+    // 使用原子表匹配所有内容 [\s\S] [\d\D]
+    let body = document.body;
+    let reg1 = /<(h[1-6])>[\s\S]*<\/\1>/gi;
+    body.innerHTML = body.innerHTML.replace(reg1, '');
+
+    // 原子组
+    let s3 = `
+    <h2>dsfsdf5641</h2>
+    <h3>qwedds62</h3>
+    `;
+    let reg2 = /<(h[1-6])>([\s\S])*<\/\1>/g;
+    console.log(s3.match(reg2));
+    
+  </script>
+</body>
+</html>
