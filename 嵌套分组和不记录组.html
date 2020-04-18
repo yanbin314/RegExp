@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="password">
+  <span></span>
+  <script>
+    let s1 = `
+      https://420123.xyz
+      http://yunszn.cn
+      https://www.420123.xyz
+    `;
+    let reg1 = /https?:\/\/((?:\w+\.)?\w+\.(?:xyz|com|cn))/gi;
+    let arr1 = [];
+    // while ( res = reg1.exec( s1 ) ) {
+    //   arr1.push(res[1]);
+    // }
+    console.log(reg1.exec(s1));
+    
+    let in1 = document.querySelector('input');
+    let span = document.querySelector('span');
+    in1.addEventListener('keyup', (e) => {
+      let s2 = in1.value;
+      let reg2 = [
+        /^[a-z0-9]{5,10}$/gi,
+        /^[A-Z]/g,
+        /[a-z]/g,
+        /[0-9]/g,
+      ];
+      console.log(s2);
+      let state = reg2.every( e => e.test(s2));
+      span.innerHTML = state ? "duile" : 'cuole';
+      
+    });
+
+  </script>
+</body>
+</html>

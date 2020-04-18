@@ -14,6 +14,19 @@
       let reg = /^[\w-]+@([\w-]+\.)+(com|cn|cc|org)$/g;
       document.querySelector('span').innerHTML = s1.value.match(reg) ? '正确' : '错误';
     });
+    let s2 = `
+      <h1>56156as1d5s</h1>
+      <span>sadfsad56</span>
+      <h2>56qwecjytjli,k</h2>
+    `;
+    let reg1 = /<(h[1-6])>([\s\S]+)<\/\1>/gi;
+    // console.log( s2.replace(reg1, `<p>$2</p>`) );
+    console.log( s2.replace( reg1, (p0, p1, p2, p3, p4) => {
+      // return `<p>${p0}</p>`;
+      return p4;
+      
+    }));
+    
   </script>
 </body>
 </html>
