@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>asdasd.sadsad</h1>
+    <h2>dsf54e5w6</h2>
+    <h1>esdew65</h1>
+</body>
+<script>
+    let reg = /<(h[1-6])>([\s\S]+?)<\/\1>/gi
+    let str1 = document.body.innerHTML.matchAll(reg);
+    let arr = [];
+    for (i of str1) {
+        console.dir(i);
+        arr.push(i[2]);
+    }
+    console.log(arr);
+    
+    function search (string, reg) {
+        let result = [];
+        while ( (res = reg.exec(string)) ) {
+            result.push(res);
+        }
+
+        return result;
+    }
+
+    let matchs = search(document.body.innerHTML, /<(h[1-6])>([\s\S]+?)<\/\1>/gi)
+
+    console.dir(matchs)
+</script>
+</html>

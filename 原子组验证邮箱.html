@@ -19,14 +19,14 @@
       <span>sadfsad56</span>
       <h2>56qwecjytjli,k</h2>
     `;
-    let reg1 = /<(h[1-6])>([\s\S]+)<\/\1>/gi;
+    let reg1 = /<(h[1-6])>([\s\S]+)<\/\1>/g;
     // console.log( s2.replace(reg1, `<p>$2</p>`) );
+    console.dir(reg1.exec(s2));
+    console.dir(reg1.exec(s2));
     console.log( s2.replace( reg1, (p0, p1, p2, p3, p4) => {
-      // return `<p>${p0}</p>`;
-      return p4;
-      
+      return `<p>${p2}</p>`;
+      // return p4;
     }));
-    
   </script>
 </body>
 </html>
